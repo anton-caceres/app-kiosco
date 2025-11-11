@@ -20,9 +20,7 @@ export default function Reports(){
   const today = new Date().toISOString().slice(0,10);
   const [from,setFrom] = useState(today);
   const [to,setTo] = useState(today);
-  const [tab,setTab] = useState("date"); // date | detailed | category | product | method
-
-  // data stores
+  const [tab,setTab] = useState("date"); 
   const [sales,setSales] = useState([]);            // ventas por fecha
   const [detailed,setDetailed] = useState([]);      // ventas con items
   const [byCat,setByCat] = useState([]);            // por rubros
@@ -177,7 +175,7 @@ export default function Reports(){
         </div>
       )}
 
-      {/* TAB: Por rubros (tabla + barras) */}
+    
       {tab==="category" && (
         <div className="panel">
           <div className="grid">

@@ -1,6 +1,8 @@
-from django.urls import path
 
-# Vistas existentes (productos/ventas/caja/reportes simples)
+from django.urls import path
+from .views_uploads import upload_logo
+
+# Vistas existentes (productos/ventas/caja/reportes)
 from .views import (
     me,
     ProductList, ProductDetail, CategoryList,
@@ -16,6 +18,7 @@ from .views_customers import (
     CustomerList, CustomerDetail, customer_statement, customer_register_payment,
     accounts_summary, customer_credit,
 )
+
 
 urlpatterns = [
     # Auth/info
@@ -53,4 +56,8 @@ urlpatterns = [
     path("accounts/<int:customer_id>/statement", customer_statement),
     path("accounts/<int:customer_id>/pay", customer_register_payment),
     path("accounts/summary", accounts_summary),
+
+    # Uploads
+    path("upload/logo", upload_logo),
 ]
+

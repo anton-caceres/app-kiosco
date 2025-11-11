@@ -4,6 +4,7 @@ from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 SECRET_KEY = "dev-secret-key-change"
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
@@ -85,3 +86,5 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

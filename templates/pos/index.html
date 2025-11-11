@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>POS Kiosco</title>
+  <link rel="stylesheet" href="/static/pos/styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="left">
+      <h3>Caja</h3>
+      <div id="cash-box">
+        <div id="cash-status">Estado: —</div>
+        <div class="row">
+          <input id="open-amount" type="number" step="0.01" placeholder="Monto inicial">
+          <button id="btn-open">Abrir Caja</button>
+        </div>
+        <div class="row">
+          <select id="move-type">
+            <option value="IN">Ingreso</option>
+            <option value="OUT">Egreso</option>
+          </select>
+          <input id="move-amount" type="number" step="0.01" placeholder="Monto">
+          <input id="move-reason" placeholder="Motivo">
+          <button id="btn-move">Registrar</button>
+        </div>
+        <div class="row">
+          <input id="close-amount" type="number" step="0.01" placeholder="Monto cierre">
+          <button id="btn-close">Cerrar Caja</button>
+        </div>
+      </div>
+
+      <h3 style="margin-top:20px;">Buscar / Escanear</h3>
+      <input id="search" placeholder="Buscar producto o escanear..." autofocus>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section class="right">
+      <h2>Carrito</h2>
+      <div id="cart" class="cart"></div>
+      <div class="totals">
+        <div><span>Subtotal</span><strong id="subtotal">$0,00</strong></div>
+        <div><span>IVA</span><strong id="iva">$0,00</strong></div>
+        <div class="grand"><span>Total</span><strong id="total">$0,00</strong></div>
+      </div>
+      <div class="pay">
+        <select id="method">
+          <option value="efectivo">Efectivo</option>
+          <option value="qr">QR/Transferencia</option>
+          <option value="tarjeta">Tarjeta</option>
+        </select>
+        <button id="charge">Cobrar</button>
+      </div>
+      <button id="print" class="secondary">Imprimir Ticket</button>
+
+      <h3 style="margin-top:20px;">Reporte Diario</h3>
+      <div class="row">
+        <input id="rep-date" type="date">
+        <button id="rep-run">Ver</button>
+      </div>
+      <pre id="rep-out" style="background:#0e1830;border:1px solid #26324d;border-radius:12px;padding:8px;overflow:auto;height:200px;"></pre>
+    </section>
+  </main>
+  <script src="/static/pos/app.js"></script>
+</body>
+</html>

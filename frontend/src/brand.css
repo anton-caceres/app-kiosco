@@ -1,0 +1,21 @@
+:root {
+  --brand: #1e40af; /* azul */
+  --brand-ink: #ffffff;
+}
+
+.brand-bg {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+.brand-btn {
+  background: var(--brand);
+  color: var(--brand-ink);
+  border: none;
+}
+.brand-btn:hover { opacity: .9; }
+
+.brand-chip {
+  display:inline-flex; align-items:center; gap:8px;
+  background: rgba(0,0,0,.08); padding:2px 8px; border-radius:999px;
+}
